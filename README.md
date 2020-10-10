@@ -2,7 +2,11 @@
 SnakeMake workflow to retrieve viral contigs from bulk metagenomes
 
 ## Installation
+Create the environment from the environment.yml file:
+
+conda env create -f environment.yml
 
 
 
+to do --> download-db.sh
 
