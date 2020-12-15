@@ -1,0 +1,81 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          AAA_19               PF13245.1    0.00043   12.7   0.1    0.0055    9.1   0.1   2.6   2   1   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          AAA_19               PF13245.1    0.00043   12.7   0.1    0.0055    9.1   0.1   2.6   2   1   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          AAA_19               PF13245.1    0.00043   12.7   0.1    0.0055    9.1   0.1   2.6   2   1   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          AAA_30               PF13604.1    2.1e-06   20.1   0.0   4.8e-06   18.9   0.0   1.7   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          AAA_30               PF13604.1    2.1e-06   20.1   0.0   4.8e-06   18.9   0.0   1.7   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          AAA_30               PF13604.1    2.1e-06   20.1   0.0   4.8e-06   18.9   0.0   1.7   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_46-gene_6  -          Antitoxin-MazE       PF04014.13   2.5e-05   16.6   0.0   3.6e-05   16.1   0.0   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_17 -          Antitoxin-MazE       PF04014.13   2.8e-05   16.5   0.0   3.6e-05   16.1   0.0   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_49-gene_1 -          BSP_II               PF05432.6    0.00019   13.3   2.1   0.00033   12.6   2.1   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_46-gene_8 -          BSP_II               PF05432.6       0.12    4.2  12.2   0.00058   11.8   2.0   2.0   2   0   0   2   2   2   0 -
+VIRSorter_short2-ContigCoA-KX349310_48-gene_2 -          BSP_II               PF05432.6       0.12    4.2  12.2   0.00058   11.8   2.0   2.0   2   0   0   2   2   2   0 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_4 -          Cons_hypoth95        PF03602.10   0.00011   14.2   0.0     0.001   11.1   0.0   2.1   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          DEAD                 PF00270.24   2.5e-12   39.2   0.0     6e-12   38.0   0.0   1.6   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          DEAD                 PF00270.24   2.5e-12   39.2   0.0     6e-12   38.0   0.0   1.6   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          DEAD                 PF00270.24   2.5e-12   39.2   0.0     6e-12   38.0   0.0   1.6   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_51-gene_1 -          DOR                  PF14839.1     0.0013   11.1   0.0    0.0014   11.0   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_28-gene_1 -          DUF2479              PF10651.4     0.0002   13.5   0.1    0.0017   10.5   0.1   2.0   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_30-gene_4 -          DUF2647              PF10839.3    5.5e-05   15.9   0.1   0.00014   14.6   0.0   1.7   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_5 -          DUF3636              PF12331.3    0.00057   12.1   0.0   0.00064   11.9   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_7  -          DUF4250              PF14056.1    0.00047   12.5   2.5   0.00076   11.9   0.1   2.3   2   1   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_14 -          DUF4250              PF14056.1     0.0043    9.5   3.8    0.0051    9.2   0.3   2.2   2   1   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_12 -          DUF4327              PF14217.1    0.00047   12.6   1.7     0.017    7.6   0.2   2.3   2   1   0   2   2   2   2 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_5  -          DUF4327              PF14217.1    0.00047   12.6   1.7     0.017    7.6   0.2   2.3   2   1   0   2   2   2   2 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_13 -          DUF4534              PF15049.1    3.9e-05   16.0   0.1   4.1e-05   15.9   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_6  -          DUF4534              PF15049.1    3.9e-05   16.0   0.1   4.1e-05   15.9   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_13 -          EIAV_GP90            PF00971.13   6.9e-05   14.0   0.1   7.2e-05   13.9   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_46-gene_2  -          EIAV_GP90            PF00971.13   6.9e-05   14.0   0.1   7.2e-05   13.9   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_49-gene_3 -          FeoB_N               PF02421.13   0.00026   12.9   0.0   0.00073   11.5   0.0   1.7   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_51-gene_3 -          FeoB_N               PF02421.13   0.00026   12.9   0.0   0.00073   11.5   0.0   1.7   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          Fox-1_C              PF12414.3    0.00032   13.7   0.5    0.0039   10.3   0.0   2.7   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          Fox-1_C              PF12414.3    0.00032   13.7   0.5    0.0039   10.3   0.0   2.7   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          Fox-1_C              PF12414.3    0.00032   13.7   0.5    0.0039   10.3   0.0   2.7   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_48-gene_3 -          GPW_gp25             PF04965.9    1.8e-18   58.6   0.0   2.3e-18   58.3   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_49-gene_2 -          GPW_gp25             PF04965.9    1.8e-18   58.6   0.0   2.3e-18   58.3   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_51-gene_2 -          GPW_gp25             PF04965.9    1.8e-18   58.6   0.0   2.3e-18   58.3   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_28-gene_2 -          HCBP_related         PF06594.6    0.00016   14.0   0.2   0.00094   11.5   0.0   2.5   2   0   0   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          Helicase_C           PF00271.26   8.4e-05   15.1   0.1   0.00031   13.3   0.1   2.1   1   1   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          Helicase_C           PF00271.26   8.4e-05   15.1   0.1   0.00031   13.3   0.1   2.1   1   1   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          Helicase_C           PF00271.26   8.4e-05   15.1   0.1   0.00031   13.3   0.1   2.1   1   1   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          Helicase_C_2         PF13307.1    0.00022   13.8   0.8      0.01    8.4   0.3   2.8   2   1   1   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          Helicase_C_2         PF13307.1    0.00022   13.8   0.8      0.01    8.4   0.3   2.8   2   1   1   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          Helicase_C_2         PF13307.1    0.00022   13.8   0.8      0.01    8.4   0.3   2.8   2   1   1   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_10 -          HGD-D                PF06050.8    2.5e-05   15.8   0.1   2.8e-05   15.6   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_9  -          HGD-D                PF06050.8    2.5e-05   15.8   0.1   2.8e-05   15.6   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_2  -          HGD-D                PF06050.8    2.5e-05   15.8   0.1   2.8e-05   15.6   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_10 -          LamB                 PF02264.10   0.00062   11.5   0.1   0.00073   11.2   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_4 -          Metallophos          PF00149.23   0.00015   13.8   0.2   0.00022   13.3   0.2   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_4 -          MethyltransfD12      PF02086.10   2.6e-57  186.8   0.5   2.9e-57  186.6   0.5   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_4 -          Methyltransf_26      PF13659.1      2e-05   17.3   0.0   6.9e-05   15.5   0.0   1.9   1   1   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_51-gene_1 -          PAAR_motif           PF05488.8    2.1e-05   17.1   0.2   0.00015   14.4   0.0   2.2   1   1   1   2   2   2   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_7 -          ParD                 PF09386.5    0.00043   13.1   0.0    0.0009   12.0   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_2 -          ParD                 PF09386.5    0.00043   13.1   0.0    0.0009   12.0   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          PhoH                 PF02562.11   1.4e-06   20.2   0.0   3.1e-06   19.2   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          PhoH                 PF02562.11   1.4e-06   20.2   0.0   3.1e-06   19.2   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          PhoH                 PF02562.11   1.4e-06   20.2   0.0   3.1e-06   19.2   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          ResIII               PF04851.10   6.1e-19   61.2   0.4   2.7e-18   59.1   0.1   2.1   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          ResIII               PF04851.10   6.1e-19   61.2   0.4   2.7e-18   59.1   0.1   2.1   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          ResIII               PF04851.10   6.1e-19   61.2   0.4   2.7e-18   59.1   0.1   2.1   3   0   0   3   3   3   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          SNF2_N               PF00176.18   3.3e-07   21.9   0.0   5.1e-07   21.3   0.0   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          SNF2_N               PF00176.18   3.3e-07   21.9   0.0   5.1e-07   21.3   0.0   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          SNF2_N               PF00176.18   3.3e-07   21.9   0.0   5.1e-07   21.3   0.0   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_8 -          Terminase_6          PF03237.10   4.2e-05   15.0   0.2   7.1e-05   14.3   0.2   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_39-gene_3 -          Terminase_6          PF03237.10   4.2e-05   15.0   0.2   7.1e-05   14.3   0.2   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_40-gene_2 -          Terminase_6          PF03237.10   4.2e-05   15.0   0.2   7.1e-05   14.3   0.2   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_37-gene_3 -          Transthyretin        PF00576.16   0.00045   12.8   0.1   0.00054   12.5   0.1   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_48-gene_1 -          tRNA-synt_2          PF00152.15   0.00022   12.6   0.0   0.00022   12.6   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_46-gene_7 -          tRNA-synt_2          PF00152.15   0.00024   12.5   0.0   0.00024   12.5   0.0   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short2-ContigCoA-KX349310_43-gene_12 -          YfkB                 PF08756.5    0.00049   12.3   0.0   0.00054   12.2   0.0   1.2   1   0   0   1   1   1   1 -
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data/PFAM_27/Pfam-A.hmm
+# Target file:     results/VirSorter/short2/fasta/VIRSorter_prots.fasta
+# Option settings: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/Miniconda3/envs/viral_env/bin/hmmsearch -o results/VirSorter/short2/Contigs_prots_vs_PFAMa.out --tblout results/VirSorter/short2/Contigs_prots_vs_PFAMa.tab --noali --cpu 20 /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data/PFAM_27/Pfam-A.hmm results/VirSorter/short2/fasta/VIRSorter_prots.fasta 
+# Current dir:     /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake
+# Date:            Tue Dec 15 09:35:48 2020
+# [ok]

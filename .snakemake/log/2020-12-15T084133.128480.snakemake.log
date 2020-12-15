@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	rename
+	3
+
+[Tue Dec 15 08:41:33 2020]
+rule rename:
+    input: test/short_file2.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short_file2_renamed.fasta
+    jobid: 2
+    wildcards: base=test/short_file2
+
+[Tue Dec 15 08:41:34 2020]
+Finished job 2.
+1 of 3 steps (33%) done
+
+[Tue Dec 15 08:41:34 2020]
+rule rename:
+    input: test/short_file1.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short_file1_renamed.fasta
+    jobid: 1
+    wildcards: base=test/short_file1
+
+[Tue Dec 15 08:41:35 2020]
+Finished job 1.
+2 of 3 steps (67%) done
+
+[Tue Dec 15 08:41:35 2020]
+localrule all:
+    input: test/short_file1_renamed.fasta, test/short_file2_renamed.fasta
+    jobid: 0
+
+[Tue Dec 15 08:41:35 2020]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-15T084133.128480.snakemake.log

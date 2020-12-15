@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	rename
+	2	virsorter
+	5
+
+[Tue Dec 15 08:51:01 2020]
+rule rename:
+    input: test/short_file2.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short_file2_renamed.fasta
+    jobid: 4
+    wildcards: base=short_file2
+
+[Tue Dec 15 08:51:03 2020]
+Finished job 4.
+1 of 5 steps (20%) done
+
+[Tue Dec 15 08:51:03 2020]
+rule virsorter:
+    input: test/short_file2_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short_file2_renamed.fasta/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=short_file2
+
+[Tue Dec 15 08:51:03 2020]
+Error in rule virsorter:
+    jobid: 2
+    output: results/VirSorter/short_file2_renamed.fasta/VIRSorter_global-phage-signal.csv
+    shell:
+        
+        mkdir -r results/VirSorter
+        scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl -f test/short_file2_renamed.fasta --db 1 --wdir results/VirSorter --ncpu 20 --data-dir /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-15T085101.565627.snakemake.log

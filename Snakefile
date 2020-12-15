@@ -1,27 +1,34 @@
-
+SAMPLES = ["short1", "short2"]
 
 rule all:
     input:
-        "test/VirSorter/renamed_file1.fasta/VIRSorter_global-phage-signal.csv"
+        expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=SAMPLES),
 
 rule rename:
     input:
-        f="test/{sample}.fasta",
+        f="test/{base}.fasta",
         scr="scripts/renaming_script/correct_contig_names.py",
     output:
-        "test/renamed_{sample}.fasta",
+        "test/{base}_renamed.fasta",
     shell:
-        "python {input.scr} -f {input.f} -n mytest"
+        "python {input.scr} -f {input.f}"
+
 
 rule virsorter:
     input:
-        f="test/renamed_{sample}.fasta",
+        f="test/{base}_renamed.fasta",
         scr="scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl",
     params:
-        outdir= "test/VirSorter",
+        outdir= "results/VirSorter/{base}",
         datadir= "/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data",
     output:
-        "test/VirSorter/renamed_{sample}.fasta/VIRSorter_global-phage-signal.csv"
+        "results/VirSorter/{base}/VIRSorter_global-phage-signal.csv",
     shell:
-        "mkdir {params.outdir}"
-        "{input.scr} -f {input.f} --db 1 --wdir {params.outdir} --ncpu 20 --data-dir {params.datadir}" 
+        """
+        {input.scr} -f {input.f} --db 1 --wdir {params.outdir} --ncpu 20 --data-dir {params.datadir}
+        """
+
+
+
+
+

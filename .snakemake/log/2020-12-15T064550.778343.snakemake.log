@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 3 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+Missing input files for rule all:
+test/VirSorter/renamed_short_file1.fasta/VIRSorter_global-phage-signal.csv

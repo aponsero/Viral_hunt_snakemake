@@ -1,0 +1,64 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	rename
+	2	virsorter
+	5
+
+[Tue Dec 15 09:34:57 2020]
+rule rename:
+    input: test/short2.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short2_renamed.fasta
+    jobid: 4
+    wildcards: base=short2
+
+[Tue Dec 15 09:34:58 2020]
+Finished job 4.
+1 of 5 steps (20%) done
+
+[Tue Dec 15 09:34:58 2020]
+rule virsorter:
+    input: test/short2_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=short2
+
+[Tue Dec 15 09:37:47 2020]
+Finished job 2.
+2 of 5 steps (40%) done
+
+[Tue Dec 15 09:37:47 2020]
+rule rename:
+    input: test/short1.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short1_renamed.fasta
+    jobid: 3
+    wildcards: base=short1
+
+[Tue Dec 15 09:37:48 2020]
+Finished job 3.
+3 of 5 steps (60%) done
+
+[Tue Dec 15 09:37:48 2020]
+rule virsorter:
+    input: test/short1_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short1/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=short1
+
+[Tue Dec 15 09:40:51 2020]
+Finished job 1.
+4 of 5 steps (80%) done
+
+[Tue Dec 15 09:40:51 2020]
+localrule all:
+    input: results/VirSorter/short1/VIRSorter_global-phage-signal.csv, results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    jobid: 0
+
+[Tue Dec 15 09:40:51 2020]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-15T093457.054152.snakemake.log

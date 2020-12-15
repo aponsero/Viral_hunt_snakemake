@@ -1,0 +1,59 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+VIRSorter_short1-ContigCoA-KX349310_10-gene_6 -          Pfam-B_209           PB000209     1.9e-17   55.4   0.0   2.3e-17   55.2   0.0   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_12-gene_4 -          Pfam-B_209           PB000209     1.9e-17   55.4   0.0   2.3e-17   55.2   0.0   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_1303          PB001303        0.78    0.9  13.0       1.1    0.4  13.0   1.1   1   0   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_2267          PB002267       0.011    7.1   8.4    0.0094    7.3   7.4   1.3   1   1   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_17-gene_9 -          Pfam-B_2303          PB002303     0.00014   13.1   0.2   0.00015   13.0   0.2   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_18-gene_6 -          Pfam-B_2303          PB002303     0.00014   13.1   0.2   0.00015   13.0   0.2   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_17-gene_9 -          Pfam-B_3729          PB003729       5e-05   14.6   0.1   5.5e-05   14.5   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_18-gene_6 -          Pfam-B_3729          PB003729       5e-05   14.6   0.1   5.5e-05   14.5   0.1   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_3932          PB003932      0.0012   10.2   8.4    0.0016    9.8   8.4   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_4149          PB004149         9.6   -2.1  23.0        31   -3.8  23.2   1.7   1   1   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_10-gene_2 -          Pfam-B_4911          PB004911     0.00051   12.2   0.3    0.0019   10.3   0.1   2.0   2   0   0   2   2   2   1 -
+VIRSorter_short1-ContigCoA-KX349310_8-gene_2  -          Pfam-B_5206          PB005206        0.61    1.6  12.2    0.0058    8.2   2.5   2.2   2   0   0   2   2   2   0 -
+VIRSorter_short1-ContigCoA-KX349310_9-gene_2  -          Pfam-B_5206          PB005206        0.61    1.6  12.2    0.0058    8.2   2.5   2.2   2   0   0   2   2   2   0 -
+VIRSorter_short1-ContigCoA-KX349310_10-gene_2 -          Pfam-B_5206          PB005206        0.83    1.1  14.3     0.003    9.1   2.6   2.2   2   0   0   2   2   2   0 -
+VIRSorter_short1-ContigCoA-KX349310_10-gene_2 -          Pfam-B_5638          PB005638     4.7e-06   19.0   0.0     1e-05   17.9   0.0   1.6   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_8-gene_2  -          Pfam-B_5638          PB005638       1e-05   17.9   0.0   2.2e-05   16.9   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_9-gene_2  -          Pfam-B_5638          PB005638       1e-05   17.9   0.0   2.2e-05   16.9   0.0   1.5   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_4-gene_6 -          Pfam-B_6475          PB006475       3e-76  249.7   3.7   4.8e-76  249.0   3.7   1.4   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_5-gene_4 -          Pfam-B_6475          PB006475     3.5e-76  249.4   3.7   5.6e-76  248.8   3.7   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_8-gene_1 -          Pfam-B_6485          PB006485        0.22    2.1   8.0      0.29    1.7   8.0   1.1   1   0   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_10-gene_2 -          Pfam-B_6794          PB006794         9.4   -4.5  19.4        14   -5.1  19.4   1.2   1   0   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_4-gene_6 -          Pfam-B_11105         PB011105      0.0034    9.6   4.8     0.011    8.0   0.5   2.8   2   0   0   2   2   2   1 -
+VIRSorter_short1-ContigCoA-KX349310_5-gene_4 -          Pfam-B_11105         PB011105      0.0039    9.4   4.8     0.012    7.9   0.5   2.8   2   0   0   2   2   2   1 -
+VIRSorter_short1-ContigCoA-KX349310_15-gene_3 -          Pfam-B_12335         PB012335     0.00069   11.4   1.4    0.0011   10.7   0.2   1.9   2   0   0   2   2   2   1 -
+VIRSorter_short1-ContigCoA-KX349310_17-gene_3 -          Pfam-B_12335         PB012335     0.00069   11.4   1.4    0.0011   10.7   0.2   1.9   2   0   0   2   2   2   1 -
+VIRSorter_short1-ContigCoA-KX349310_5-gene_4 -          Pfam-B_13090         PB013090         3.1    0.2  18.5     0.022    7.1   4.9   4.1   3   1   0   3   3   3   0 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_13224         PB013224     9.6e-05   14.0   2.9   0.00015   13.3   2.9   1.3   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_8-gene_3  -          Pfam-B_13991         PB013991     0.00029   13.0   0.0   0.00078   11.6   0.0   1.7   1   1   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_12-gene_1 -          Pfam-B_13991         PB013991     0.00041   12.5   0.0    0.0011   11.2   0.0   1.7   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_10-gene_3 -          Pfam-B_13991         PB013991     0.00044   12.4   0.0    0.0011   11.1   0.0   1.7   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_9-gene_3  -          Pfam-B_13991         PB013991     0.00044   12.4   0.0    0.0011   11.1   0.0   1.7   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_2 -          Pfam-B_14913         PB014913     0.00037   12.4   0.4   0.00047   12.0   0.4   1.1   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_9 -          Pfam-B_15026         PB015026      0.0004   12.6   0.1   0.00054   12.2   0.1   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_15-gene_9 -          Pfam-B_15181         PB015181     8.4e-05   14.5   1.3   8.9e-05   14.4   1.3   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_17-gene_9 -          Pfam-B_15181         PB015181     0.00032   12.6   2.2   0.00042   12.2   2.1   1.3   1   1   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_18-gene_6 -          Pfam-B_15181         PB015181     0.00032   12.6   2.2   0.00042   12.2   2.1   1.3   1   1   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_17-gene_1 -          Pfam-B_16814         PB016814       0.003   10.1   5.6    0.0051    9.4   5.6   1.4   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_18310         PB018310         1.7    0.9  14.5       4.6   -0.5  14.5   1.8   1   0   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_8-gene_1 -          Pfam-B_18714         PB018714       0.015    8.0  15.0    0.0083    8.8   3.1   3.7   2   1   0   3   3   3   0 -
+VIRSorter_short1-ContigCoA-KX349310_4-gene_6 -          Pfam-B_18714         PB018714        0.23    4.2  12.9     0.014    8.0   2.6   3.6   2   1   1   3   3   3   0 -
+VIRSorter_short1-ContigCoA-KX349310_5-gene_4 -          Pfam-B_18714         PB018714           3    0.6  21.3     0.019    7.7   2.9   4.5   3   1   1   4   4   4   0 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_5 -          Pfam-B_18949         PB018949     5.7e-19   60.8   0.3   6.6e-19   60.6   0.3   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_4-gene_2 -          Pfam-B_18949         PB018949     5.7e-19   60.8   0.3   6.6e-19   60.6   0.3   1.0   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_19269         PB019269         3.3   -0.4  28.1       9.9   -1.9  28.4   1.5   1   1   0   1   1   1   0 -
+VIRSorter_short1-ContigCoA-KX349310_12-gene_5 -          Pfam-B_19621         PB019621     0.00036   12.1   0.4   0.00062   11.3   0.4   1.2   1   0   0   1   1   1   1 -
+VIRSorter_short1-ContigCoA-KX349310_2-gene_3 -          Pfam-B_19847         PB019847       0.016    6.1  14.4     0.018    5.9  14.4   1.1   1   0   0   1   1   1   0 -
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data/PFAM_27/Pfam-B.hmm
+# Target file:     results/VirSorter/short1/fasta/VIRSorter_prots.fasta
+# Option settings: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/Miniconda3/envs/viral_env/bin/hmmsearch -o results/VirSorter/short1/Contigs_prots_vs_PFAMb.out --tblout results/VirSorter/short1/Contigs_prots_vs_PFAMb.tab --noali --cpu 20 /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data/PFAM_27/Pfam-B.hmm results/VirSorter/short1/fasta/VIRSorter_prots.fasta 
+# Current dir:     /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake
+# Date:            Tue Dec 15 09:40:04 2020
+# [ok]

@@ -1,0 +1,29 @@
+
+
+rule all:
+    input:
+        "test/VirSorter/renamed_short_file1.fasta/VIRSorter_global-phage-signal.csv"
+
+rule rename:
+    input:
+        f="{sample}.fasta",
+        scr="scripts/renaming_script/correct_contig_names.py",
+    params:
+        name="mytest",
+    output:
+        "renamed_{sample}.fasta",
+    shell:
+        "python {input.scr} -f {input.f} -n name"
+
+rule virsorter:
+    input:
+        f="renamed_{sample}.fasta",
+        scr="scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl",
+    params:
+        outdir= "VirSorter",
+        datadir= "/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data",
+    output:
+        "VirSorter/renamed_{sample}.fasta/VIRSorter_global-phage-signal.csv",
+    shell:
+        "mkdir {params.outdir}"
+        #"{input.scr} -f {input.f} --db 1 --wdir {params.outdir} --ncpu 20 --data-dir {params.datadir}" 
