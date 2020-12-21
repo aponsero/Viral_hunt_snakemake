@@ -3,6 +3,7 @@ SAMPLES = ["short1", "short2"]
 rule all:
     input:
         expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=SAMPLES),
+        expand("results/VirFinder/{sample}.txt", sample=SAMPLES),
 
 rule rename:
     input:
@@ -29,6 +30,16 @@ rule virsorter:
         """
 
 
-
-
-
+rule virfinder:
+    input:
+        f="test/{base}_renamed.fasta",
+        scr="scripts/VirFinder/eval_default.r",
+    params:
+        datadir= "/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data",
+    output:
+        "results/VirFinder/{base}.txt",
+    shell:
+        """
+        module load R
+        Rscript {input.scr} {input.f} {output}
+        """

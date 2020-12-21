@@ -1,0 +1,87 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	rename
+	2	virfinder
+	2	virsorter
+	7
+
+[Mon Dec 21 08:17:18 2020]
+rule rename:
+    input: test/short2.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short2_renamed.fasta
+    jobid: 6
+    wildcards: base=short2
+
+[Mon Dec 21 08:17:19 2020]
+Finished job 6.
+1 of 7 steps (14%) done
+
+[Mon Dec 21 08:17:19 2020]
+rule virsorter:
+    input: test/short2_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=short2
+
+[Mon Dec 21 08:18:51 2020]
+Finished job 2.
+2 of 7 steps (29%) done
+
+[Mon Dec 21 08:18:51 2020]
+rule virfinder:
+    input: test/short2_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/short2.txt
+    jobid: 4
+    wildcards: base=short2
+
+[Mon Dec 21 08:18:54 2020]
+Finished job 4.
+3 of 7 steps (43%) done
+
+[Mon Dec 21 08:18:54 2020]
+rule rename:
+    input: test/short1.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/short1_renamed.fasta
+    jobid: 5
+    wildcards: base=short1
+
+[Mon Dec 21 08:18:55 2020]
+Finished job 5.
+4 of 7 steps (57%) done
+
+[Mon Dec 21 08:18:55 2020]
+rule virsorter:
+    input: test/short1_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short1/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=short1
+
+[Mon Dec 21 08:20:29 2020]
+Finished job 1.
+5 of 7 steps (71%) done
+
+[Mon Dec 21 08:20:29 2020]
+rule virfinder:
+    input: test/short1_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/short1.txt
+    jobid: 3
+    wildcards: base=short1
+
+[Mon Dec 21 08:20:31 2020]
+Finished job 3.
+6 of 7 steps (86%) done
+
+[Mon Dec 21 08:20:31 2020]
+localrule all:
+    input: results/VirSorter/short1/VIRSorter_global-phage-signal.csv, results/VirSorter/short2/VIRSorter_global-phage-signal.csv, results/VirFinder/short1.txt, results/VirFinder/short2.txt
+    jobid: 0
+
+[Mon Dec 21 08:20:31 2020]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-21T081718.279335.snakemake.log

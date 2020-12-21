@@ -8,5 +8,6 @@ conda env create -f environment.yml
 
 
 
-to do --> download-db.sh
+to do install--> VirSorter: download-db.sh
+            --> install VirFinder in R
 
