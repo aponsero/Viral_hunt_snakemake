@@ -1,0 +1,77 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	virbrant
+	2	virfinder
+	2	virsorter
+	7
+
+[Mon Dec 21 09:05:57 2020]
+rule virsorter:
+    input: test/short2_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=short2
+
+[Mon Dec 21 09:07:29 2020]
+Finished job 2.
+1 of 7 steps (14%) done
+
+[Mon Dec 21 09:07:29 2020]
+rule virsorter:
+    input: test/short1_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short1/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=short1
+
+[Mon Dec 21 09:09:03 2020]
+Finished job 1.
+2 of 7 steps (29%) done
+
+[Mon Dec 21 09:09:03 2020]
+rule virfinder:
+    input: test/short2_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/short2.txt
+    jobid: 4
+    wildcards: base=short2
+
+[Mon Dec 21 09:09:06 2020]
+Finished job 4.
+3 of 7 steps (43%) done
+
+[Mon Dec 21 09:09:06 2020]
+rule virfinder:
+    input: test/short1_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/short1.txt
+    jobid: 3
+    wildcards: base=short1
+
+[Mon Dec 21 09:09:09 2020]
+Finished job 3.
+4 of 7 steps (57%) done
+
+[Mon Dec 21 09:09:09 2020]
+rule virbrant:
+    input: test/short2_renamed.fasta
+    output: results/Vibrant/short2_renamed.fasta/VIBRANT_short2_renamed.fasta/VIBRANT_log_short2_renamed.log
+    jobid: 6
+    wildcards: base=short2
+
+[Mon Dec 21 09:09:11 2020]
+Error in rule virbrant:
+    jobid: 6
+    output: results/Vibrant/short2_renamed.fasta/VIBRANT_short2_renamed.fasta/VIBRANT_log_short2_renamed.log
+    shell:
+        
+        cd results/Vibrant
+        VIBRANT_run.py -i test/short2_renamed.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-21T090557.307201.snakemake.log

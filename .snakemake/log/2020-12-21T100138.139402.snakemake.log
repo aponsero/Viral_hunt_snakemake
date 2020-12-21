@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	virbrant
+	2	virfinder
+	2	virsorter
+	7
+
+[Mon Dec 21 10:01:38 2020]
+rule virsorter:
+    input: test/short2_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=short2
+
+Will exit after finishing currently running jobs.
+[Mon Dec 21 10:02:52 2020]
+Error in rule virsorter:
+    jobid: 2
+    output: results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+    shell:
+        
+        scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl -f test/short2_renamed.fasta --db 1 --wdir results/VirSorter/short2 --ncpu 20 --data-dir /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job virsorter since they might be corrupted:
+results/VirSorter/short2/VIRSorter_global-phage-signal.csv
+Will exit after finishing currently running jobs.
+Shutting down, this might take some time.
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-21T100138.139402.snakemake.log

@@ -4,6 +4,7 @@ rule all:
     input:
         expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=SAMPLES),
         expand("results/VirFinder/{sample}.txt", sample=SAMPLES),
+        expand("results/Vibrant/VIBRANT_{sample}_renamed/VIBRANT_log_{sample}_renamed.log", sample=SAMPLES),
 
 rule rename:
     input:
@@ -34,8 +35,6 @@ rule virfinder:
     input:
         f="test/{base}_renamed.fasta",
         scr="scripts/VirFinder/eval_default.r",
-    params:
-        datadir= "/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data",
     output:
         "results/VirFinder/{base}.txt",
     shell:
@@ -43,3 +42,21 @@ rule virfinder:
         module load R
         Rscript {input.scr} {input.f} {output}
         """
+
+rule virbrant:
+    input:
+        f="test/{base}_renamed.fasta",
+    params:
+        outdir="results/Vibrant",
+    output:
+        "results/Vibrant/VIBRANT_{base}_renamed/VIBRANT_log_{base}_renamed.log",
+    shell:
+        """
+        cd {params.outdir}
+        VIBRANT_run.py -i ../../{input.f}
+        cd ../..
+        """
+
+
+
+
