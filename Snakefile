@@ -1,10 +1,10 @@
-SAMPLES = ["short1", "short2"]
+configfile: "config/config.yml"
 
 rule all:
     input:
-        expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=SAMPLES),
-        expand("results/VirFinder/{sample}.txt", sample=SAMPLES),
-        expand("results/Vibrant/VIBRANT_{sample}_renamed/VIBRANT_log_{sample}_renamed.log", sample=SAMPLES),
+        expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=config["samples"]),
+        expand("results/VirFinder/{sample}.txt", sample=config["samples"]),
+        expand("results/Vibrant/VIBRANT_{sample}_renamed/VIBRANT_log_{sample}_renamed.log", sample=config["samples"]),
 
 rule rename:
     input:
@@ -43,7 +43,7 @@ rule virfinder:
         Rscript {input.scr} {input.f} {output}
         """
 
-rule virbrant:
+rule vibrant:
     input:
         f="test/{base}_renamed.fasta",
     params:
@@ -57,6 +57,36 @@ rule virbrant:
         cd ../..
         """
 
+rule bowtie2:
+    input:
+        f="test/{base}_renamed.fasta",
+        R1="test/{base}_R1.fq",
+        R2="test/{base}_R2.fq",
+    params:
+        db="results/marvel/{base}",
+        sam="test/{base}.sam",
+    output:
+        "test/{base}.bam"
+    shell:
+        """
+        bowtie2-build {input.f} {params.db}
+        bowtie2 -x {db} -1 {input.R1} -2 {input.R2} -S {params.sam}
+        samtools view -S -b {params.sam} > {output}
+        """
+
+rule metabat:
+    input:
+        f="test/{base}_renamed.fasta",
+        bam="test/{base}.bam"
+    params:
+        bin_dir="results/marvel/{base}_bin/bin",
+    output:
+        "test/{base}_DEPTH.txt"
+    shell:
+        """
+        jgi_summarize_bam_contig_depths --outputDepth {output} {input.bam}
+        metabat2 -i {{input.f} -a {output} -m 1500 -s 10000 -o {params.bin_dir}
+        """
 
 
-
+       
