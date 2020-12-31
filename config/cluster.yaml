@@ -1,41 +1,18 @@
 #Modify lines indicated with MODIFY
 __default__:
-  queue: mangi #MODIFY
-  A: 'spectorl' #MODIFY
-  M: 'pmonnaha@umn.edu' #MODIFY
-  walltime: '04:00:00'
-  mem: '8000mb'
-  m: 'a'
-  r: 'n'
-  o: 'OandE/{rule}.{wildcards}.out'
-  e: 'OandE/{rule}.{wildcards}.err'
+  queue: 'standard' #MODIFY
+  group: 'aponsero' #MODIFY
+  M: 'aponsero@email.arizona.edu' #MODIFY
+  walltime: 'walltime=06:00:00'
+  select: 'select=1:ncpus=12:mem=100gb'
+  m: 'bea'
+  o: 'out/{rule}.{wildcards}.out'
+  e: 'err/{rule}.{wildcards}.err'
 
-QCcombine_query:
-  walltime: '04:00:00'
-  mem: '8000mb'
+#rename:
+#  walltime: '01:00:00'
+#  mem: '1000mb'
 
-prep_RefVCF:
-  walltime: '48:00:00'
-  mem: '32gb'
 
-phase:
-  walltime: '24:00:00'
-  mem: '32gb'
-
-infer_ancestry:
-  walltime: '48:00:00'
-  mem: '32gb'
-
-make_hap_beds:
-  walltime: '04:00:00'
-  mem: '8000mb'
-
-plot_karyograms:
-  walltime: '04:00:00'
-  mem: '8000mb'
-
-admixMap:
-  walltime: '04:00:00'
-  mem: '8000mb'
 
 

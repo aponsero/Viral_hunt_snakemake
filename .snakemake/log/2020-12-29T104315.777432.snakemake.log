@@ -1,0 +1,101 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 3
+Job counts:
+	count	jobs
+	1	all
+	3	rename
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	13
+
+[Tue Dec 29 10:43:15 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817893.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    jobid: 10
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 10 with external jobid '3804968.head1.cm.cluster'.
+
+[Tue Dec 29 10:43:16 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817951.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 12 with external jobid '3804969.head1.cm.cluster'.
+
+[Tue Dec 29 10:43:17 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817925.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 11 with external jobid '3804970.head1.cm.cluster'.
+[Tue Dec 29 10:43:35 2020]
+Finished job 10.
+1 of 13 steps (8%) done
+
+[Tue Dec 29 10:43:35 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+[Tue Dec 29 10:43:36 2020]
+Finished job 12.
+2 of 13 steps (15%) done
+[Tue Dec 29 10:43:36 2020]
+Finished job 11.
+3 of 13 steps (23%) done
+Submitted job 1 with external jobid '3804971.head1.cm.cluster'.
+
+[Tue Dec 29 10:43:36 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3804972.head1.cm.cluster'.
+
+[Tue Dec 29 10:43:36 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3804973.head1.cm.cluster'.
+[Tue Dec 29 10:43:46 2020]
+Error in rule virsorter:
+    jobid: 1
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    shell:
+        
+        scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl -f test/megahitCoassembly_SAMEA4817893_renamed.fasta --db 1 --wdir results/VirSorter/megahitCoassembly_SAMEA4817893 --ncpu 20 --data-dir /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3804971.head1.cm.cluster
+
+Error executing rule virsorter on cluster (jobid: 1, external: 3804971.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.1eop3o_i/snakejob.virsorter.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Dec 29 10:43:56 2020]
+Error in rule virsorter:
+    jobid: 3
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    shell:
+        
+        scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl -f test/megahitCoassembly_SAMEA4817951_renamed.fasta --db 1 --wdir results/VirSorter/megahitCoassembly_SAMEA4817951 --ncpu 20 --data-dir /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/tools/virsorter-data
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3804973.head1.cm.cluster
+
+Error executing rule virsorter on cluster (jobid: 3, external: 3804973.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.1eop3o_i/snakejob.virsorter.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-29T104315.777432.snakemake.log

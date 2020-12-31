@@ -1,0 +1,116 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	10
+
+[Wed Dec 30 09:18:37 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3805947.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:37 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 1 with external jobid '3805948.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:37 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817925_renamed/VIBRANT_megahitCoassembly_SAMEA4817925_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817925_renamed.log
+    jobid: 8
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 8 with external jobid '3805949.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:38 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3805950.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:39 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817893.txt
+    jobid: 4
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 4 with external jobid '3805951.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:39 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 9 with external jobid '3805952.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:39 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817925.txt
+    jobid: 5
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 5 with external jobid '3805953.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:40 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817925/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 2 with external jobid '3805954.head1.cm.cluster'.
+
+[Wed Dec 30 09:18:40 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 7 with external jobid '3805955.head1.cm.cluster'.
+[Wed Dec 30 11:19:45 2020]
+Finished job 5.
+1 of 10 steps (10%) done
+[Wed Dec 30 11:53:27 2020]
+Finished job 4.
+2 of 10 steps (20%) done
+[Wed Dec 30 12:06:08 2020]
+Finished job 2.
+3 of 10 steps (30%) done
+[Wed Dec 30 12:10:49 2020]
+Finished job 1.
+4 of 10 steps (40%) done
+[Wed Dec 30 12:49:31 2020]
+Finished job 6.
+5 of 10 steps (50%) done
+[Wed Dec 30 13:36:15 2020]
+Finished job 3.
+6 of 10 steps (60%) done
+[Wed Dec 30 14:32:59 2020]
+Finished job 7.
+7 of 10 steps (70%) done
+[Wed Dec 30 15:12:31 2020]
+Finished job 8.
+8 of 10 steps (80%) done
+Will exit after finishing currently running jobs.

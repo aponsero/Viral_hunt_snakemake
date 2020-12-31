@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 3
+Job counts:
+	count	jobs
+	1	all
+	3	rename
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	13
+
+[Tue Dec 29 10:42:52 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817893.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    jobid: 10
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Error submitting jobscript (exit code 1):
+
+
+[Tue Dec 29 10:42:52 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817951.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Error submitting jobscript (exit code 1):
+
+
+[Tue Dec 29 10:42:52 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817925.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Error submitting jobscript (exit code 1):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2020-12-29T104252.424425.snakemake.log

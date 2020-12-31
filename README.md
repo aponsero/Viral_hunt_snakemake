@@ -8,6 +8,6 @@ conda env create -f environment.yml
 
 
 
-to do install--> VirSorter: download-db.sh
+to do install--> VirSorter: download-db.sh and put scripts in scripts folder
             --> install VirFinder in R
-
+            --> Vibrant: run the download-db.sh script

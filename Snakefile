@@ -4,7 +4,7 @@ rule all:
     input:
         expand("results/VirSorter/{sample}/VIRSorter_global-phage-signal.csv", sample=config["samples"]),
         expand("results/VirFinder/{sample}.txt", sample=config["samples"]),
-        expand("results/Vibrant/VIBRANT_{sample}_renamed/VIBRANT_log_{sample}_renamed.log", sample=config["samples"]),
+        expand("results/Vibrant/{sample}_renamed/VIBRANT_{sample}_renamed/VIBRANT_log_{sample}_renamed.log", sample=config["samples"]),
 
 rule rename:
     input:
@@ -27,9 +27,11 @@ rule virsorter:
         "results/VirSorter/{base}/VIRSorter_global-phage-signal.csv",
     shell:
         """
+        set +eu
+        source activate viral_env
+        module load perl
         {input.scr} -f {input.f} --db 1 --wdir {params.outdir} --ncpu 20 --data-dir {params.datadir}
         """
-
 
 rule virfinder:
     input:
@@ -47,14 +49,16 @@ rule vibrant:
     input:
         f="test/{base}_renamed.fasta",
     params:
-        outdir="results/Vibrant",
+        outdir="results/Vibrant/{base}_renamed",
     output:
-        "results/Vibrant/VIBRANT_{base}_renamed/VIBRANT_log_{base}_renamed.log",
+        "results/Vibrant/{base}_renamed/VIBRANT_{base}_renamed/VIBRANT_log_{base}_renamed.log",
     shell:
         """
+        set +eu
+        source activate viral_env
         cd {params.outdir}
-        VIBRANT_run.py -i ../../{input.f}
-        cd ../..
+        VIBRANT_run.py -i ../../../{input.f}
+        cd ../../..
         """
 
 rule bowtie2:
@@ -88,5 +92,3 @@ rule metabat:
         metabat2 -i {{input.f} -a {output} -m 1500 -s 10000 -o {params.bin_dir}
         """
 
-
-       

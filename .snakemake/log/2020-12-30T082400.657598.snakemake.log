@@ -1,0 +1,101 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	10
+
+[Wed Dec 30 08:24:00 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 9 with external jobid '3805898.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:01 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817925.txt
+    jobid: 5
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 5 with external jobid '3805899.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:01 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817925/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 2 with external jobid '3805900.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:01 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 7 with external jobid '3805901.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:02 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817893.txt
+    jobid: 4
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 4 with external jobid '3805902.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:02 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 1 with external jobid '3805903.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:02 2020]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817925_renamed/VIBRANT_megahitCoassembly_SAMEA4817925_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817925_renamed.log
+    jobid: 8
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 8 with external jobid '3805904.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:02 2020]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3805905.head1.cm.cluster'.
+
+[Wed Dec 30 08:24:02 2020]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3805906.head1.cm.cluster'.
+[Wed Dec 30 08:42:02 2020]
+Finished job 8.
+1 of 10 steps (10%) done
+[Wed Dec 30 08:54:43 2020]
+Finished job 7.
+2 of 10 steps (20%) done
+[Wed Dec 30 09:07:23 2020]
+Finished job 9.
+3 of 10 steps (30%) done
+Will exit after finishing currently running jobs.

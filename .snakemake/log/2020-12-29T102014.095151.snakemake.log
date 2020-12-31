@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 32
+Job counts:
+	count	jobs
+	1	all
+	3	rename
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	13
+
+[Tue Dec 29 10:20:14 2020]
+rule rename:
+    input: test/megahitCoassembly_SAMEA4817925.fasta, scripts/renaming_script/correct_contig_names.py
+    output: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+WorkflowError in line 9 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+'Wildcards' object has no attribute 'l'
