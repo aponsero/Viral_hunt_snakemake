@@ -8,7 +8,11 @@ rule all:
         expand("test/{sample}_DEPTH.txt", sample=config["samples"]),
         expand("results/marvel/{sample}_bin/results/phage_bins/list_bins.txt", sample=config["samples"]),
         expand("results/viral_sequences/prophages/{sample}_prophages_selection1.fna", sample=config["samples"]),
+        expand("results/viral_sequences/phages/{sample}_phages_selection1.fna", sample=config["samples"]),
 
+
+
+##### workflow starts here
 rule rename:
     input:
         f="test/{base}.fasta",
@@ -119,6 +123,24 @@ rule prophage:
         """
 
 
+
+rule phage:
+    input:
+        f_marvel="results/marvel/{base}_bin/results/phage_bins/list_bins.txt",
+        f_virsorter="results/VirSorter/{base}/VIRSorter_global-phage-signal.csv",
+        f_virfinder="results/VirFinder/{base}.txt",
+        f_vibrant="results/Vibrant/{base}_renamed/VIBRANT_{base}_renamed/VIBRANT_log_{base}_renamed.log",
+    params:
+        phage_script="scripts/parsing_results/get_viral_sequences.sh",
+        output_dir="results/viral_sequences/phages",
+        sample_name="{base}",
+    output:
+        "results/viral_sequences/phages/{base}_phages_selection1.fna"
+    shell:
+        """
+        mkdir -p {params.output_dir}
+        bash {params.phage_script} {params.sample_name} {params.output_dir}
+        """
 
 
 

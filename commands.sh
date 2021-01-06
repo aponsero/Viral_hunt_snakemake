@@ -5,6 +5,9 @@ conda activate viral_env
 #dry run
 snakemake -n
 
+# run on one core (for testing)
+snakemake --core 1
+
 # run on cluster
 -q $QUEUE -W group_list=$GROUP -M $MAIL_USER -m $MAIL_TYPE
 snakemake --cluster "qsub -q {cluster.queue} -W group_list={cluster.group} -M {cluster.M} -m -M {cluster.m} -l {cluster.walltime} -l {cluster.select}" --cluster-config config/cluster.yaml -j 3

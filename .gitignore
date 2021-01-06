@@ -7,5 +7,9 @@ test/SAMEA4817951_renamed.fasta
 test/SAMEA4817893.bam
 test/SAMEA4817925.bam
 test/SAMEA4817951.bam
+test/SAMEA4817893_renamed.fasta_singleline.fasta
+test/SAMEA4817925_renamed.fasta_singleline.fasta
+test/SAMEA4817951_renamed.fasta_singleline.fasta
 scripts/MARVEL/
 results/
+.snakemake/

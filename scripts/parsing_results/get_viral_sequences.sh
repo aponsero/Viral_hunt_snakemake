@@ -8,18 +8,16 @@
 #PBS -m bea
 #PBS -l place=pack:shared
 
+cwd=$(pwd)
 
-SAMPLE_LIST="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/fastq/Biosample.txt"
-
-OUT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/potential_viral/non_prophage_dir"
+SAMPLE=$1
+OUT_DIR="$cwd/$2"
 
 
 ##############################################
 # virSorter parsing
 
-while read SAMPLE; do
-    VIRSORTER_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/VirSorter/megahitCoassembly_${SAMPLE}.fa"
-
+    VIRSORTER_DIR="$cwd/results/VirSorter/${SAMPLE}"
     VIRSORTER="$VIRSORTER_DIR/Predicted_viral_sequences"
 
     cd $VIRSORTER
@@ -54,16 +52,13 @@ while read SAMPLE; do
 
     cp ${SAMPLE}_list_VirSorter.txt $OUT_DIR
 
-done <$SAMPLE_LIST
 
 ###############################################################
 # vibrant parsing
 
-while read SAMPLE; do
 # get Vibrant prophages names
-    VIBRANT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/Vibrant/megahitCoassembly_${SAMPLE}.fa"
-
-    VIBRANT="$VIBRANT_DIR/VIBRANT_megahitCoassembly_${SAMPLE}/VIBRANT_phages_megahitCoassembly_${SAMPLE}"
+    VIBRANT_DIR="$cwd/results/Vibrant/${SAMPLE}_renamed"
+    VIBRANT="$VIBRANT_DIR/VIBRANT_${SAMPLE}_renamed/VIBRANT_phages_${SAMPLE}_renamed"
 
     cd $VIBRANT
 
@@ -76,18 +71,16 @@ while read SAMPLE; do
         rm "${SAMPLE}_list_Vibrant.txt"
     fi
 
-    grep -v "_fragment_" megahitCoassembly_${SAMPLE}.phages_combined.txt > ${SAMPLE}_list_Vibrant.txt 
+    grep -v "_fragment_" ${SAMPLE}_renamed.phages_combined.txt > ${SAMPLE}_list_Vibrant.txt 
 
     cp ${SAMPLE}_list_Vibrant.txt $OUT_DIR
 
-done <$SAMPLE_LIST
 
 ###############################################################
 # MARVEL parsing
 
-while read SAMPLE; do
 # get MARVEL names
-    MARVEL_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/MARVEL"
+    MARVEL_DIR="$cwd/results/marvel"
     MARVEL="$MARVEL_DIR/${SAMPLE}_bin/results/phage_bins"
 
     if [[ ! -d "$MARVEL_DIR/${SAMPLE}_bin/results/phage_bins" ]]; then
@@ -114,17 +107,12 @@ while read SAMPLE; do
 
         cp ${SAMPLE}_list_marvel.txt $OUT_DIR
     fi
-done <$SAMPLE_LIST
-
-
 
 ###############################################################
 # VirFinder parsing
-# Need to add this parsing step while running VirFinder
 
-while read SAMPLE; do
 # get VirFinder names
-    VIRFINDER_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/VirFinder"
+    VIRFINDER_DIR="$cwd/results/VirFinder"
 
     cd $VIRFINDER_DIR
 
@@ -134,46 +122,36 @@ while read SAMPLE; do
         rm "${SAMPLE}_list_virFinder.txt"
     fi
 
-    awk '{ if (($4 >= 0.960) && ($3 >= 1000)) { print $2 } }' megahitCoassembly_${SAMPLE}.fasta.txt | sed 's/"//g' > ${SAMPLE}_list_virFinder.txt
+    awk '{ if (($4 >= 0.960) && ($3 >= 1000)) { print $2 } }' ${SAMPLE}.txt | sed 's/"//g' > ${SAMPLE}_list_virFinder.txt
 
     cp ${SAMPLE}_list_virFinder.txt $OUT_DIR
 
-done <$SAMPLE_LIST
 
 ###############################################################
 # merge viral sequences
 
 cd $OUT_DIR
-
-while read SAMPLE; do
     cat ${SAMPLE}_list_* > ${SAMPLE}_merge.txt
     sort ${SAMPLE}_merge.txt | uniq > ${SAMPLE}_unique.txt 
 
-done <$SAMPLE_LIST
-
-
-cat *_unique.txt > selection1.txt
 
 ###############################################################
 # retrieve lytic sequences
 
-CONT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/assembly_patient/renamed_contigs"
-SPLIT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/Jess/dataset_CRC/PRJEB27928_Wirbel/Viral_hunt/potential_viral"
-LIST_SPLIT="$SPLIT_DIR/list_split.txt"
-
+CONT_DIR="$cwd/test"
 cd $CONT_DIR
+out="$OUT_DIR/${SAMPLE}_phages_selection1.fna"
+file_id="$CONT_DIR/${SAMPLE}_renamed.fasta"
 
-s=`head -n +${PBS_ARRAY_INDEX} $LIST_SPLIT | tail -n 1`
-split="$SPLIT_DIR/$s"
-out="$SPLIT_DIR/${s}.fasta"
-echo $split
+# convert multiline into singleline
+awk '!/^>/ { printf "%s", $0; n = "\n" } /^>/ { print n $0; n = "" } END { printf "%s", n }' $file_id > ${file_id}_singleline.fasta
 
-while IFS=, read -r contig_id file_id stuff
+while read -r contig_id
 do 
     echo "$contig_id in $file_id"
-    file="singleline_$file_id"
+    file="${file_id}_singleline.fasta"
     grep -A1 -w $contig_id $file >> $out
-done < $split
+done < $OUT_DIR/${SAMPLE}_unique.txt
 
 
 
