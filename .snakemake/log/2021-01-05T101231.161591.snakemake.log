@@ -1,0 +1,97 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	3	metabat
+	2	vibrant
+	9
+
+[Tue Jan  5 10:12:31 2021]
+rule metabat:
+    input: test/SAMEA4817893_renamed.fasta, test/SAMEA4817893.bam
+    output: test/SAMEA4817893_DEPTH.txt
+    jobid: 10
+    wildcards: base=SAMEA4817893
+
+Submitted job 10 with external jobid '3809697.head1.cm.cluster'.
+
+[Tue Jan  5 10:12:32 2021]
+rule vibrant:
+    input: test/SAMEA4817893_renamed.fasta
+    output: results/Vibrant/SAMEA4817893_renamed/VIBRANT_SAMEA4817893_renamed/VIBRANT_log_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=SAMEA4817893
+
+Submitted job 7 with external jobid '3809698.head1.cm.cluster'.
+
+[Tue Jan  5 10:12:32 2021]
+rule vibrant:
+    input: test/SAMEA4817951_renamed.fasta
+    output: results/Vibrant/SAMEA4817951_renamed/VIBRANT_SAMEA4817951_renamed/VIBRANT_log_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=SAMEA4817951
+
+Submitted job 9 with external jobid '3809699.head1.cm.cluster'.
+
+[Tue Jan  5 10:12:33 2021]
+rule metabat:
+    input: test/SAMEA4817925_renamed.fasta, test/SAMEA4817925.bam
+    output: test/SAMEA4817925_DEPTH.txt
+    jobid: 11
+    wildcards: base=SAMEA4817925
+
+Submitted job 11 with external jobid '3809700.head1.cm.cluster'.
+
+[Tue Jan  5 10:12:35 2021]
+rule metabat:
+    input: test/SAMEA4817951_renamed.fasta, test/SAMEA4817951.bam
+    output: test/SAMEA4817951_DEPTH.txt
+    jobid: 12
+    wildcards: base=SAMEA4817951
+
+Submitted job 12 with external jobid '3809701.head1.cm.cluster'.
+[Tue Jan  5 10:13:01 2021]
+Finished job 11.
+1 of 9 steps (11%) done
+
+[Tue Jan  5 10:13:01 2021]
+rule marvel:
+    input: test/SAMEA4817925_DEPTH.txt
+    output: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+    jobid: 14
+    wildcards: base=SAMEA4817925
+
+Submitted job 14 with external jobid '3809702.head1.cm.cluster'.
+[Tue Jan  5 10:13:11 2021]
+Error in rule marvel:
+    jobid: 14
+    output: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        python3 scripts/MARVEL/marvel_bins.py -i results/marvel/SAMEA4817925_bin/results/phage_bins -t 28 
+        find results/marvel/SAMEA4817925_bin/results/phage_bins -name "*.fasta" >> results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809702.head1.cm.cluster
+
+Error executing rule marvel on cluster (jobid: 14, external: 3809702.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.26tfscwi/snakejob.marvel.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Jan  5 10:15:01 2021]
+Finished job 10.
+2 of 9 steps (22%) done
+[Tue Jan  5 10:21:44 2021]
+Finished job 12.
+3 of 9 steps (33%) done
+[Tue Jan  5 16:17:49 2021]
+Finished job 7.
+4 of 9 steps (44%) done
+[Tue Jan  5 20:30:20 2021]
+Finished job 9.
+5 of 9 steps (56%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2021-01-05T101231.161591.snakemake.log

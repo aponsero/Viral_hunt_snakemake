@@ -1,0 +1,180 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	3	metabat
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	16
+
+[Mon Jan  4 01:31:25 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3809022.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:25 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, test/megahitCoassembly_SAMEA4817951.bam
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 12 with external jobid '3809023.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:26 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 1 with external jobid '3809024.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:26 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3809025.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:26 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 7 with external jobid '3809026.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:26 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817925/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 2 with external jobid '3809027.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:27 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, test/megahitCoassembly_SAMEA4817893.bam
+    output: test/megahitCoassembly_SAMEA4817893_DEPTH.txt
+    jobid: 10
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 10 with external jobid '3809028.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:27 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, test/megahitCoassembly_SAMEA4817925.bam
+    output: test/megahitCoassembly_SAMEA4817925_DEPTH.txt
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 11 with external jobid '3809029.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:27 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 9 with external jobid '3809030.head1.cm.cluster'.
+
+[Mon Jan  4 01:31:27 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817893.txt
+    jobid: 4
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 4 with external jobid '3809031.head1.cm.cluster'.
+[Mon Jan  4 01:31:57 2021]
+Error in rule metabat:
+    jobid: 11
+    output: test/megahitCoassembly_SAMEA4817925_DEPTH.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817925_DEPTH.txt test/megahitCoassembly_SAMEA4817925.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817925_renamed.fasta -a test/megahitCoassembly_SAMEA4817925_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817925_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809029.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 11, external: 3809029.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.k4vu71cz/snakejob.metabat.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Jan  4 01:32:38 2021]
+Error in rule metabat:
+    jobid: 10
+    output: test/megahitCoassembly_SAMEA4817893_DEPTH.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817893_DEPTH.txt test/megahitCoassembly_SAMEA4817893.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817893_renamed.fasta -a test/megahitCoassembly_SAMEA4817893_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817893_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809028.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 10, external: 3809028.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.k4vu71cz/snakejob.metabat.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Jan  4 01:33:18 2021]
+Error in rule metabat:
+    jobid: 12
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817951_DEPTH.txt test/megahitCoassembly_SAMEA4817951.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817951_renamed.fasta -a test/megahitCoassembly_SAMEA4817951_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817951_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809023.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 12, external: 3809023.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.k4vu71cz/snakejob.metabat.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Jan  4 01:45:59 2021]
+Error in rule vibrant:
+    jobid: 7
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd results/Vibrant/megahitCoassembly_SAMEA4817893_renamed
+        VIBRANT_run.py -i ../../../test/megahitCoassembly_SAMEA4817893_renamed.fasta
+        cd ../../..
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809026.head1.cm.cluster
+
+Error executing rule vibrant on cluster (jobid: 7, external: 3809026.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.k4vu71cz/snakejob.vibrant.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Jan  4 01:46:09 2021]
+Error in rule vibrant:
+    jobid: 9
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd results/Vibrant/megahitCoassembly_SAMEA4817951_renamed
+        VIBRANT_run.py -i ../../../test/megahitCoassembly_SAMEA4817951_renamed.fasta
+        cd ../../..
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809030.head1.cm.cluster
+
+Error executing rule vibrant on cluster (jobid: 9, external: 3809030.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.k4vu71cz/snakejob.vibrant.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+Will exit after finishing currently running jobs.

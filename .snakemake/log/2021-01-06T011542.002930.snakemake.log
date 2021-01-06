@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	4
+
+[Wed Jan  6 01:15:42 2021]
+rule marvel:
+    input: test/SAMEA4817951_DEPTH.txt
+    output: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    jobid: 15
+    wildcards: base=SAMEA4817951
+
+[Wed Jan  6 01:15:44 2021]
+Finished job 15.
+1 of 4 steps (25%) done
+
+[Wed Jan  6 01:15:44 2021]
+rule marvel:
+    input: test/SAMEA4817893_DEPTH.txt
+    output: results/marvel/SAMEA4817893_bin/results/phage_bins/list_bins.txt
+    jobid: 13
+    wildcards: base=SAMEA4817893
+
+[Wed Jan  6 01:15:45 2021]
+Finished job 13.
+2 of 4 steps (50%) done
+
+[Wed Jan  6 01:15:45 2021]
+rule marvel:
+    input: test/SAMEA4817925_DEPTH.txt
+    output: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+    jobid: 14
+    wildcards: base=SAMEA4817925
+
+[Wed Jan  6 01:15:47 2021]
+Finished job 14.
+3 of 4 steps (75%) done
+
+[Wed Jan  6 01:15:47 2021]
+localrule all:
+    input: results/VirSorter/SAMEA4817893/VIRSorter_global-phage-signal.csv, results/VirSorter/SAMEA4817925/VIRSorter_global-phage-signal.csv, results/VirSorter/SAMEA4817951/VIRSorter_global-phage-signal.csv, results/VirFinder/SAMEA4817893.txt, results/VirFinder/SAMEA4817925.txt, results/VirFinder/SAMEA4817951.txt, results/Vibrant/SAMEA4817893_renamed/VIBRANT_SAMEA4817893_renamed/VIBRANT_log_SAMEA4817893_renamed.log, results/Vibrant/SAMEA4817925_renamed/VIBRANT_SAMEA4817925_renamed/VIBRANT_log_SAMEA4817925_renamed.log, results/Vibrant/SAMEA4817951_renamed/VIBRANT_SAMEA4817951_renamed/VIBRANT_log_SAMEA4817951_renamed.log, test/SAMEA4817893_DEPTH.txt, test/SAMEA4817925_DEPTH.txt, test/SAMEA4817951_DEPTH.txt, results/marvel/SAMEA4817893_bin/results/phage_bins/list_bins.txt, results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt, results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    jobid: 0
+
+[Wed Jan  6 01:15:47 2021]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2021-01-06T011542.002930.snakemake.log

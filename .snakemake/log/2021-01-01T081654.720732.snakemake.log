@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Error: Directory cannot be locked. This usually means that another Snakemake instance is running on this directory. Another possibility is that a previous run exited unexpectedly.
+Job counts:
+	count	jobs
+	1	all
+	3	metabat
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	13
+
+[Fri Jan  1 08:16:54 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, test/megahitCoassembly_SAMEA4817951.bam
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+

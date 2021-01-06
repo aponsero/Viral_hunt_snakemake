@@ -3,7 +3,7 @@ __default__:
   queue: 'standard' #MODIFY
   group: 'aponsero' #MODIFY
   M: 'aponsero@email.arizona.edu' #MODIFY
-  walltime: 'walltime=06:00:00'
+  walltime: 'walltime=12:00:00'
   select: 'select=1:ncpus=12:mem=100gb'
   m: 'bea'
   o: 'out/{rule}.{wildcards}.out'

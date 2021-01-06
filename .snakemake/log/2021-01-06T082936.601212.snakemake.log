@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 3 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+Missing input files for rule all:
+results/viral_sequences/prophages/SAMEA4817925_prophages_selection1.fna
+results/viral_sequences/prophages/SAMEA4817951_prophages_selection1.fna
+results/viral_sequences/prophages/SAMEA4817893_prophages_selection1.fna

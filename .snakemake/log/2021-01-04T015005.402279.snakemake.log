@@ -1,0 +1,154 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	3	metabat
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	16
+
+[Mon Jan  4 01:50:05 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, test/megahitCoassembly_SAMEA4817925.bam
+    output: test/megahitCoassembly_SAMEA4817925_DEPTH.txt
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 11 with external jobid '3809049.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:06 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3809050.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:06 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 1 with external jobid '3809051.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:07 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 7 with external jobid '3809052.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:07 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 9 with external jobid '3809053.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:07 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817925/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 2 with external jobid '3809054.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:07 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, test/megahitCoassembly_SAMEA4817951.bam
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 12 with external jobid '3809055.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:07 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, test/megahitCoassembly_SAMEA4817893.bam
+    output: test/megahitCoassembly_SAMEA4817893_DEPTH.txt
+    jobid: 10
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 10 with external jobid '3809056.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:08 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3809057.head1.cm.cluster'.
+
+[Mon Jan  4 01:50:08 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817893.txt
+    jobid: 4
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 4 with external jobid '3809058.head1.cm.cluster'.
+[Mon Jan  4 01:50:37 2021]
+Finished job 11.
+1 of 16 steps (6%) done
+
+[Mon Jan  4 01:50:37 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817925.txt
+    jobid: 5
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 5 with external jobid '3809059.head1.cm.cluster'.
+[Mon Jan  4 01:51:10 2021]
+Finished job 10.
+2 of 16 steps (12%) done
+
+[Mon Jan  4 01:51:10 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817925_renamed/VIBRANT_megahitCoassembly_SAMEA4817925_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817925_renamed.log
+    jobid: 8
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 8 with external jobid '3809060.head1.cm.cluster'.
+[Mon Jan  4 01:51:43 2021]
+Finished job 12.
+3 of 16 steps (19%) done
+
+[Mon Jan  4 01:51:43 2021]
+rule marvel:
+    input: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    output: results/marvel/megahitCoassembly_SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    jobid: 15
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 15 with external jobid '3809061.head1.cm.cluster'.
+[Mon Jan  4 01:51:54 2021]
+Error in rule marvel:
+    jobid: 15
+    output: results/marvel/megahitCoassembly_SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        python3 marvel_bins.py -i results/marvel/megahitCoassembly_SAMEA4817951_bin/results/phage_bins -t 28 
+        find results/marvel/megahitCoassembly_SAMEA4817951_bin/results/phage_bins -name "*.fasta" >> results/marvel/megahitCoassembly_SAMEA4817951_bin/results/phage_bins/list_bins.txt"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3809061.head1.cm.cluster
+
+Error executing rule marvel on cluster (jobid: 15, external: 3809061.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.t2a11h05/snakejob.marvel.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+Will exit after finishing currently running jobs.

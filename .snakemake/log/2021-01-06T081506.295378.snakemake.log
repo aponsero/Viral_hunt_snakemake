@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	prophage
+	4
+
+[Wed Jan  6 08:15:06 2021]
+rule prophage:
+    input: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt, results/VirSorter/SAMEA4817951/VIRSorter_global-phage-signal.csv, results/VirFinder/SAMEA4817951.txt, results/Vibrant/SAMEA4817951_renamed/VIBRANT_SAMEA4817951_renamed/VIBRANT_log_SAMEA4817951_renamed.log
+    output: results/viral_sequences/prophages/SAMEA4817951_prophages_selection1.fna
+    jobid: 18
+    wildcards: base=SAMEA4817951
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 103 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+results/viral_sequences/prophages/SAMEA4817951_prophages_selection1.fna
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2021-01-06T081506.295378.snakemake.log

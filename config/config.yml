@@ -1,8 +1,8 @@
 # Specify absolute paths to files/directories, and use /home/... instead of /panfs/...  For some reason, singularity is now having bind issues with use of latter.
 samples:
-    megahitCoassembly_SAMEA4817893: "test/megahitCoassembly_SAMEA4817893"
-    megahitCoassembly_SAMEA4817925: "test/megahitCoassembly_SAMEA4817925"
-    megahitCoassembly_SAMEA4817951: "test/megahitCoassembly_SAMEA4817951"
+    SAMEA4817893: "test/SAMEA4817893"
+    SAMEA4817925: "test/SAMEA4817925"
+    SAMEA4817951: "test/SAMEA4817951"
 #dir:
 #  main: "/home/spectorl/pmonnaha/ancestry/" 
 #  scratch: "/scratch.global/pmonnaha/"

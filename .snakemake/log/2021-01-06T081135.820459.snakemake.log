@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	3	prophage
+	4
+
+[Wed Jan  6 08:11:36 2021]
+rule prophage:
+    input: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt, results/VirSorter/SAMEA4817925/VIRSorter_global-phage-signal.csv, results/VirFinder/SAMEA4817925.txt, results/Vibrant/SAMEA4817925_renamed/VIBRANT_SAMEA4817925_renamed/VIBRANT_log_SAMEA4817925_renamed.log
+    output: results/viral_sequences/prophages/SAMEA4817925_prophages_selection1.fna
+    jobid: 17
+    wildcards: base=SAMEA4817925
+
+RuleException in line 103 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+NameError: The name 'base' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

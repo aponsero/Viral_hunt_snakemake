@@ -1,0 +1,86 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	4
+
+[Wed Jan  6 02:00:39 2021]
+rule marvel:
+    input: test/SAMEA4817925_DEPTH.txt
+    output: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+    jobid: 14
+    wildcards: base=SAMEA4817925
+
+Submitted job 14 with external jobid '3810323.head1.cm.cluster'.
+
+[Wed Jan  6 02:00:40 2021]
+rule marvel:
+    input: test/SAMEA4817951_DEPTH.txt
+    output: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    jobid: 15
+    wildcards: base=SAMEA4817951
+
+Submitted job 15 with external jobid '3810324.head1.cm.cluster'.
+
+[Wed Jan  6 02:00:40 2021]
+rule marvel:
+    input: test/SAMEA4817893_DEPTH.txt
+    output: results/marvel/SAMEA4817893_bin/results/phage_bins/list_bins.txt
+    jobid: 13
+    wildcards: base=SAMEA4817893
+
+Submitted job 13 with external jobid '3810325.head1.cm.cluster'.
+[Wed Jan  6 02:04:40 2021]
+Error in rule marvel:
+    jobid: 14
+    output: results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd scripts/MARVEL
+        python3 marvel_bins.py -i ../../results/marvel/SAMEA4817925_bin -t 28 
+        find results/marvel/SAMEA4817925_bin -name "*.fasta" >> results/marvel/SAMEA4817925_bin/results/phage_bins/list_bins.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3810323.head1.cm.cluster
+
+Error executing rule marvel on cluster (jobid: 14, external: 3810323.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.6f5x82xc/snakejob.marvel.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Jan  6 02:40:22 2021]
+Error in rule marvel:
+    jobid: 13
+    output: results/marvel/SAMEA4817893_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd scripts/MARVEL
+        python3 marvel_bins.py -i ../../results/marvel/SAMEA4817893_bin -t 28 
+        find results/marvel/SAMEA4817893_bin -name "*.fasta" >> results/marvel/SAMEA4817893_bin/results/phage_bins/list_bins.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3810325.head1.cm.cluster
+
+Error executing rule marvel on cluster (jobid: 13, external: 3810325.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.6f5x82xc/snakejob.marvel.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Jan  6 07:06:23 2021]
+Error in rule marvel:
+    jobid: 15
+    output: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd scripts/MARVEL
+        python3 marvel_bins.py -i ../../results/marvel/SAMEA4817951_bin -t 28 
+        find results/marvel/SAMEA4817951_bin -name "*.fasta" >> results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3810324.head1.cm.cluster
+
+Error executing rule marvel on cluster (jobid: 15, external: 3810324.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.6f5x82xc/snakejob.marvel.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2021-01-06T020039.518334.snakemake.log

@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	marvel
+	4
+
+[Wed Jan  6 01:19:21 2021]
+rule marvel:
+    input: test/SAMEA4817951_DEPTH.txt
+    output: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    jobid: 15
+    wildcards: base=SAMEA4817951
+
+[Wed Jan  6 01:19:24 2021]
+Error in rule marvel:
+    jobid: 15
+    output: results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+    shell:
+        
+        set +eu
+        source activate viral_env
+        cd scripts/MARVEL
+        python3 marvel_bins.py -i results/marvel/SAMEA4817951_bin/results/phage_bins -t 28 
+        find results/marvel/SAMEA4817951_bin/results/phage_bins -name "*.fasta" >> results/marvel/SAMEA4817951_bin/results/phage_bins/list_bins.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/log/2021-01-06T011921.048722.snakemake.log

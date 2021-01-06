@@ -1,0 +1,156 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	3	metabat
+	3	vibrant
+	3	virfinder
+	3	virsorter
+	13
+
+[Fri Jan  1 08:19:07 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817893.txt
+    jobid: 4
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 4 with external jobid '3807278.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:10 2021]
+rule virfinder:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirFinder/eval_default.r
+    output: results/VirFinder/megahitCoassembly_SAMEA4817951.txt
+    jobid: 6
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 6 with external jobid '3807279.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:10 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817951/VIRSorter_global-phage-signal.csv
+    jobid: 3
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 3 with external jobid '3807280.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:11 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817925/VIRSorter_global-phage-signal.csv
+    jobid: 2
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 2 with external jobid '3807281.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:11 2021]
+rule virsorter:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, scripts/VirSorter/wrapper_phage_contigs_sorter_iPlant.pl
+    output: results/VirSorter/megahitCoassembly_SAMEA4817893/VIRSorter_global-phage-signal.csv
+    jobid: 1
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 1 with external jobid '3807282.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:11 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta, test/megahitCoassembly_SAMEA4817893.bam
+    output: test/megahitCoassembly_SAMEA4817893_DEPTH.txt
+    jobid: 10
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 10 with external jobid '3807283.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:11 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817925_renamed.fasta, test/megahitCoassembly_SAMEA4817925.bam
+    output: test/megahitCoassembly_SAMEA4817925_DEPTH.txt
+    jobid: 11
+    wildcards: base=megahitCoassembly_SAMEA4817925
+
+Submitted job 11 with external jobid '3807284.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:12 2021]
+rule metabat:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta, test/megahitCoassembly_SAMEA4817951.bam
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    jobid: 12
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 12 with external jobid '3807285.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:12 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817893_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817893_renamed/VIBRANT_megahitCoassembly_SAMEA4817893_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817893_renamed.log
+    jobid: 7
+    wildcards: base=megahitCoassembly_SAMEA4817893
+
+Submitted job 7 with external jobid '3807286.head1.cm.cluster'.
+
+[Fri Jan  1 08:19:12 2021]
+rule vibrant:
+    input: test/megahitCoassembly_SAMEA4817951_renamed.fasta
+    output: results/Vibrant/megahitCoassembly_SAMEA4817951_renamed/VIBRANT_megahitCoassembly_SAMEA4817951_renamed/VIBRANT_log_megahitCoassembly_SAMEA4817951_renamed.log
+    jobid: 9
+    wildcards: base=megahitCoassembly_SAMEA4817951
+
+Submitted job 9 with external jobid '3807287.head1.cm.cluster'.
+[Fri Jan  1 08:19:40 2021]
+Error in rule metabat:
+    jobid: 10
+    output: test/megahitCoassembly_SAMEA4817893_DEPTH.txt
+    shell:
+        
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817893_DEPTH.txt test/megahitCoassembly_SAMEA4817893.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817893_renamed.fasta -a test/megahitCoassembly_SAMEA4817893_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817893_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3807283.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 10, external: 3807283.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.j4q7t6wt/snakejob.metabat.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Jan  1 08:19:40 2021]
+Error in rule metabat:
+    jobid: 11
+    output: test/megahitCoassembly_SAMEA4817925_DEPTH.txt
+    shell:
+        
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817925_DEPTH.txt test/megahitCoassembly_SAMEA4817925.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817925_renamed.fasta -a test/megahitCoassembly_SAMEA4817925_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817925_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3807284.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 11, external: 3807284.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.j4q7t6wt/snakejob.metabat.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Jan  1 08:19:40 2021]
+Error in rule metabat:
+    jobid: 12
+    output: test/megahitCoassembly_SAMEA4817951_DEPTH.txt
+    shell:
+        
+        jgi_summarize_bam_contig_depths --outputDepth test/megahitCoassembly_SAMEA4817951_DEPTH.txt test/megahitCoassembly_SAMEA4817951.bam
+        metabat2 -i test/megahitCoassembly_SAMEA4817951_renamed.fasta -a test/megahitCoassembly_SAMEA4817951_DEPTH.txt -m 1500 -s 10000 -o results/marvel/megahitCoassembly_SAMEA4817951_bin/bin
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 3807285.head1.cm.cluster
+
+Error executing rule metabat on cluster (jobid: 12, external: 3807285.head1.cm.cluster, jobscript: /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/.snakemake/tmp.j4q7t6wt/snakejob.metabat.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Jan  1 10:50:16 2021]
+Finished job 2.
+1 of 13 steps (8%) done
+[Fri Jan  1 10:58:57 2021]
+Finished job 1.
+2 of 13 steps (15%) done
+[Fri Jan  1 10:59:28 2021]
+Finished job 4.
+3 of 13 steps (23%) done
+[Fri Jan  1 11:39:25 2021]
+Finished job 6.
+4 of 13 steps (31%) done
+[Fri Jan  1 12:40:49 2021]
+Finished job 3.
+5 of 13 steps (38%) done
+Will exit after finishing currently running jobs.

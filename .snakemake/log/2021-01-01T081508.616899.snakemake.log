@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 65 of /xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/alise/my_scripts/Viral_hunt_snakemake/Snakefile:
+Missing input files for rule metabat:
+test/megahitCoassembly_SAMEA4817893.bam

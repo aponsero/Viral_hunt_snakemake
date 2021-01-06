@@ -1,6 +1,11 @@
-test/megahitCoassembly_SAMEA4817893.fasta
-test/megahitCoassembly_SAMEA4817925.fasta
-test/megahitCoassembly_SAMEA4817951.fasta
-test/megahitCoassembly_SAMEA4817893_renamed.fasta
-test/megahitCoassembly_SAMEA4817925_renamed.fasta
-test/megahitCoassembly_SAMEA4817951_renamed.fasta
+test/SAMEA4817893.fasta
+test/SAMEA4817925.fasta
+test/SAMEA4817951.fasta
+test/SAMEA4817893_renamed.fasta
+test/SAMEA4817925_renamed.fasta
+test/SAMEA4817951_renamed.fasta
+test/SAMEA4817893.bam
+test/SAMEA4817925.bam
+test/SAMEA4817951.bam
+scripts/MARVEL/
+results/
