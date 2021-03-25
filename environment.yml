@@ -27,10 +27,10 @@ dependencies:
   - brotlipy=0.7.0=py37h8f50634_1000
   - bzip2=1.0.8=h516909a_3
   - c-ares=1.11.0=h470a237_1
-  - ca-certificates=2020.6.20=hecda079_0
+  - ca-certificates=2020.12.5=ha878542_0
   - cachetools=4.1.1=py_0
   - cairo=1.16.0=h3fc0475_1005
-  - certifi=2020.6.20=py37he5f6b98_2
+  - certifi=2020.12.5=py37h89c1867_0
   - cffi=1.14.3=py37h2b28604_0
   - chardet=3.0.4=py37he5f6b98_1008
   - click=7.1.2=pyh9f0ad1d_0
@@ -144,6 +144,8 @@ dependencies:
   - markupsafe=1.1.1=py37hb5d75c8_2
   - matplotlib=3.3.2=0
   - matplotlib-base=3.3.2=py37hd478181_0
+  - metabat2=2.12.1=1
+  - metagene_annotator=1.0=h516909a_3
   - minced=0.4.2=0
   - multidict=4.7.5=py37h8f50634_1
   - nbformat=5.0.7=py_0
@@ -153,7 +155,7 @@ dependencies:
   - olefile=0.46=py_0
   - openjdk=11.0.8=hacce0ff_0
   - openjpeg=2.3.1=h981e76c_3
-  - openssl=1.1.1h=h516909a_0
+  - openssl=1.1.1i=h7f98852_0
   - paml=4.9=h516909a_5
   - pandas=1.1.3=py37h3340039_0
   - pango=1.42.4=h7062337_4

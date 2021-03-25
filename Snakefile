@@ -13,15 +13,6 @@ rule all:
 
 
 ##### workflow starts here
-rule rename:
-    input:
-        f="test/{base}.fasta",
-        scr="scripts/renaming_script/correct_contig_names.py",
-    output:
-        "test/{base}_renamed.fasta",
-    shell:
-        "python {input.scr} -f {input.f}"
-
 
 rule virsorter:
     input:

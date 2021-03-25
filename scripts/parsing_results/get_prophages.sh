@@ -49,6 +49,7 @@ cat VIRSorter_prophages_cat-4.fasta VIRSorter_prophages_cat-5.fasta > ${SAMPLE}_
     sed 's/-circular.*$//' list_prophages_b.txt > list_prophages_c.txt
     sed 's/_gene_.*$//' list_prophages_c.txt > list_prophages_VirSorter.txt
     paste list_prophages.txt list_prophages_VirSorter.txt > map_names_prophages.txt
+    cp list_prophages.txt $OUT_DIR/${SAMPLE}_list_virSorter.txt
 
     rm list_prophages.txt
     rm list_prophages_c.txt
@@ -76,6 +77,7 @@ cat VIRSorter_prophages_cat-4.fasta VIRSorter_prophages_cat-5.fasta > ${SAMPLE}_
     grep "_fragment_" ${SAMPLE}_renamed.phages_combined.txt > list_prophages.txt
     sed 's/_fragment_.*$//' list_prophages.txt > list_prophages_Vibrant.txt
     paste list_prophages.txt list_prophages_Vibrant.txt > map_names_prophages_o.txt
+    cp list_prophages_Vibrant.txt $OUT_DIR/${SAMPLE}_list_Vibrant.txt
 
 # merge and remove common prophages (VirSorter is selected by default)
     MERGE="$OUT_DIR/${SAMPLE}_prophage.txt"
