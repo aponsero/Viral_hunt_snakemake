@@ -38,11 +38,6 @@ git clone https://github.com/LaboratorioBioinformatica/MARVEL
 cd MARVEL 
 python3 download_and_set_models.py
 ```
-           
-## notes
-Need as an imput assembly (renaming script in pipeline) and bam mapping (but need to be using the renamed contigs)
-
-need to re-save the env configuration (addition metabat2)
 
 
 
